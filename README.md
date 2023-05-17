@@ -15,3 +15,55 @@
 **Запускаю второй скрипт:**
 
 ![Снимок экрана (198)](https://github.com/AleksandrShirobokov/RabbitMQ/assets/69298696/fce713cf-db8e-450d-9d70-4dcc336cb927)
+
+
+## * Задание 4. Ansible playbook.
+### *Напишите плейбук, который будет производить установку RabbitMQ на любое количество нод и объединять их в кластер. При этом будет автоматически создавать политику ha-all.*
+**Создаю плейбук для установки RabbitMQ и создания кластера с политикой ha-all:**
+```
+- name: Установка и настройка RabbitMQ
+  hosts: rabbitmq_nodes
+  become: true
+  
+  tasks:
+    - name: Установка RabbitMQ
+      apt:
+        name: rabbitmq-server
+        state: present
+      notify:
+        - Start RabbitMQ
+
+    - name: Копирование конфигурационного файла
+      template:
+        src: rabbitmq.conf.j2
+        dest: /etc/rabbitmq/rabbitmq.conf
+      notify:
+        - Restart RabbitMQ
+      
+  handlers:
+    - name: Start RabbitMQ
+      service:
+        name: rabbitmq-server
+        state: started
+        enabled: true
+        
+    - name: Restart RabbitMQ
+      service:
+        name: rabbitmq-server
+        state: restarted
+        enabled: true
+```
+
+**Также создаю файл-шаблон rabbitmq.conf.j2, который включает конфиг для rabbitmq, настройку из трех кластеров, и политику ha-all:**
+```
+cluster_formation.peer_discovery_backend = rabbit_peer_discovery_classic_config
+cluster_formation.classic_config.nodes.1 = rabbit@node1
+cluster_formation.classic_config.nodes.2 = rabbit@node2
+cluster_formation.classic_config.nodes.3 = rabbit@node3
+
+cluster_partition_handling = autoheal
+
+policy ha-all "^" '{"ha-mode":"all"}' \n
+
+```
+
