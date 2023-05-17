@@ -16,6 +16,13 @@
 
 ![Снимок экрана (198)](https://github.com/AleksandrShirobokov/RabbitMQ/assets/69298696/fce713cf-db8e-450d-9d70-4dcc336cb927)
 
+**Также создал очередь test100 из 100 сообщений Hello World**
+
+![Снимок экрана (199)](https://github.com/AleksandrShirobokov/RabbitMQ/assets/69298696/b120cf20-2b66-4be5-9fb2-3d8677ed49dc)
+
+**Затем получаю сообщения из очереди в консоль:**
+
+![Снимок экрана (200)](https://github.com/AleksandrShirobokov/RabbitMQ/assets/69298696/c2ebcb57-8f03-4895-a527-b94631a30b6c)
 
 ## * Задание 4. Ansible playbook.
 ### *Напишите плейбук, который будет производить установку RabbitMQ на любое количество нод и объединять их в кластер. При этом будет автоматически создавать политику ha-all.*
