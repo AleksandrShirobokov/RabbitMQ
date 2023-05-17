@@ -42,6 +42,14 @@
 
 ![Снимок экрана (203)](https://github.com/AleksandrShirobokov/RabbitMQ/assets/69298696/23a91941-2f32-435e-9064-1cf205b82f24)
 
+- **Получаю сообщения на первой ноде:**
+
+![Снимок экрана (208)](https://github.com/AleksandrShirobokov/RabbitMQ/assets/69298696/487cfc6c-620c-4c8d-adfe-c54077da563b)
+
+- **Получаю сообщения на второй ноде:**
+
+![Снимок экрана (207)](https://github.com/AleksandrShirobokov/RabbitMQ/assets/69298696/b2acca14-7592-4781-ae77-4f5f55026dfd)
+
 
 ## * Задание 4. Ansible playbook.
 ### *Напишите плейбук, который будет производить установку RabbitMQ на любое количество нод и объединять их в кластер. При этом будет автоматически создавать политику ha-all.*
