@@ -24,6 +24,25 @@
 
 ![Снимок экрана (200)](https://github.com/AleksandrShirobokov/RabbitMQ/assets/69298696/c2ebcb57-8f03-4895-a527-b94631a30b6c)
 
+## Задание 3. Подготовка HA кластера.
+- **Создаю кластер:**
+
+![Снимок экрана (201)](https://github.com/AleksandrShirobokov/RabbitMQ/assets/69298696/d580d89f-40f7-4e62-831d-594ad750de9c)
+
+- **Политика ha-all:**
+
+![Снимок экрана (202)](https://github.com/AleksandrShirobokov/RabbitMQ/assets/69298696/5f653702-6096-4c78-93e8-0b9caf167609)
+
+- **Первая нода и статус кластера:**
+
+![Снимок экрана (204)](https://github.com/AleksandrShirobokov/RabbitMQ/assets/69298696/6d788e21-25db-4f90-a870-32d6979f763b)
+
+
+- **Вторая нода и статус кластера:**
+
+![Снимок экрана (203)](https://github.com/AleksandrShirobokov/RabbitMQ/assets/69298696/23a91941-2f32-435e-9064-1cf205b82f24)
+
+
 ## * Задание 4. Ansible playbook.
 ### *Напишите плейбук, который будет производить установку RabbitMQ на любое количество нод и объединять их в кластер. При этом будет автоматически создавать политику ha-all.*
 **Создаю плейбук для установки RabbitMQ и создания кластера с политикой ha-all:**
